@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="navmine.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+
+
+
     <div class="headcontainer" >
-
         <h1>Shekeye</h1>
-        <button class="mobile-nav-toglle" aria-controls="buttons" aria-expanded="false"><span class="sr-only"></span></button>
-
-    <div id="buttons" data-visible="false" class="buttons" >
-
+        <button class="mobile-nav-toggle" aria-controls="button" aria-expanded="false"><span class="sr-only"></span></button>
+        <div id="linkbuttons"  class="linkbuttons" data-visible="false">
         <a href="">Home</a>
-        <a href="">Courses</a>
+        <a href="">Portfolio</a>
+        <a href="#three"> About</a>
         <a href="">Contacts</a>
-        <a href="">About</a>
+        </div>
 
     </div>
-<script src="navbar.js" defer></script>
-</div>
+
+    <main class="container">
+        <p>Hello my name is Shekeye</p>
+        <span class="first">I am front-end developer</span>
+        <span class="second">i am junior front-end developer who is ready
+            to get hired
+        </span>
+
+        <button class="learn">Learn More</button>
+    </main>
+
+    
+        
+        
+        <section id="three" class="innerbox">
+            <img src="shekeye.jpg" alt="">
+            
+            
+            <p>Hi, my name is Mohamed Hassan Hussein
+                i was born in Saudi Arabia but i grew
+                up here in Mogadishu Somalia, i am currently
+                a graduate student who is seeking tech related
+                jobs
+            </p>
+        
+        </section>
+        
+    
+    
+    <script src="navmine.js" defer></script>
 </body>
 </html>
