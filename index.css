@@ -71,7 +71,7 @@ body{
     color: transparent;
     margin: 10px;
     
-    background: url('/animationss/images/back.png');
+    background: url('back.png');
     -webkit-text-stroke: 1px #fff;
     -webkit-background-clip: text;
     animation: back 20s linear infinite;
