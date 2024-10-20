@@ -3,110 +3,239 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background: url('/animationss/images/background.png');
-    overflow-x: hidden;
+html{
+    scroll-behavior: smooth;
 }
-
+body{
+    background-color: black;
+    color: white;
+    height: 200vh;
+}
 
 .headcontainer{
     display: flex;
-    /* background: url('/animationss/images/background.png'); */
-    
+    padding: 5px;
 }
 .headcontainer h1{
     margin-top: 10px;
     margin-left: 10%;
     margin-right: 50%;
-    
+}
+
+.linkbuttons{
+    margin-top: 20px;
+    display: flex;
+    /* border: 1px solid red; */
+    /* background: hsla(0, 2%, 57%, 0.75); */
     
 }
-.headcontainer a{
+.linkbuttons a{
+    margin: 7px;
     text-decoration: none;
     color: white;
-    font-size: 1.3rem;
-    margin: 7px;
-    margin-top: 10px;
-    
-    
+    position: relative;
+    /* border: 1px solid red; */
+    /* margin-top: 55px; */
 }
-.headcontainer a:hover{
+.linkbuttons a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+
+    transform: translateX(-50%);
+    transition: width 0.3s;
+
+}
+.linkbuttons a:hover::after{
+    width: 50%;
+}
+
+.container{
+    /* max-width: 700px; */
     width: 100%;
-    /* background-color: hsl(0, 0%, 38%); */
-    /* transition: 50s ease-in-out; */
+    /* border: 1px solid red; */
+    /* margin: 10% 5%; */
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    /* display: block; */
+
 }
 
-.mobile-nav-toglle {
+.container p{
+    font-size: 80px;
+    color: transparent;
+    margin: 10px;
+    
+    background: url('/animationss/images/back.png');
+    -webkit-text-stroke: 1px #fff;
+    -webkit-background-clip: text;
+    animation: back 20s linear infinite;
+    background-position: 0 0;
+}
 
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+
+
+.container .first{
+    font-size: 50px;
+    margin: 10px;
+    margin-bottom: 10px;
+    
+
+    color: hsl(0, 0%, 64%);
+}
+
+.container .second{
+    display: block;
+    margin: 10px;
+    font-size: 30px;
+    color: gray;
+}
+.mobile-nav-toggle{
     display: none;
 }
-
-
-.buttons{
-    margin-top: 13px;
+.learn{
+    /* padding: 0.6rem 2rem; */
+    padding: 15px 30px;
+    margin-top: 3%;
+    font-weight: 600;
+    background-color: hsl(0, 0%, 83%);
+    border: none;
+    cursor: pointer;
+    /* margin-left: 10px; */
     display: flex;
-    
-        background: hsl(0 0% 0/0.75);
 }
-
-/* if the firefox doesnot support the property below here, the
-that is the way you can manage just comment this one out and
-see what happen */
 
 @supports (backdrop-filter: blur(1rem)){
-    .buttons{
+    .linkbuttons{
         backdrop-filter: blur(1rem);
-        background: hsl(0 0% 100/0.1);
+        background: hsla(0, 0%, 24%, 0.9);
     }
 }
-@media (max-width: 35em){
-    .buttons{
+@media(max-width:35em){
+    .linkbuttons{
         position: fixed;
         inset: 0 0 0 30%;
-
-        z-index: 1000;
         flex-direction: column;
         padding: min(30vh, 10rem) 2em;
+        /* background-repeat: no-repeat; */
 
         transform: translateX(100%);
-        
         transition: transform 350ms ease-out;
-        
-    }
-    .headcontainer a{
-        padding: 0.5rem;
-    }
+        z-index: 1000;
 
-    .buttons[data-visible="true"]{
-        transform: translateX(0);
+        /* width: 20%; */
+        
+
+
     }
-    .mobile-nav-toglle{
+    .linkbuttons a{
+        padding: 0.5rem;
+        font-size: 20px;
+        }
+        .linkbuttons[data-visible="true"]{
+            transform: translateX(0);
+        }
+
+    .mobile-nav-toggle{
         display: block;
         position: absolute;
-        z-index: 9999;
-        /* background-repeat: no-repeat; */
-        /* background-position: cover; */
-        
-        background: url('hamburger-menu-mobile.svg');
-         
-        
-        background-size: 2rem;
-        border: none;
-
-        
-        /* object-fit: cover; */
-        width: 2rem;
-        aspect-ratio: 1;
-        
         top: 2rem;
         right: 2rem;
+        z-index: 9999;
+        background-repeat: no-repeat;
+        /* background-color: white; */
+        background: url('mobile-application-hamburger-menu-setting-vector-25729243.jpg');
 
+        background-size: 2rem;
+        border: none;
+        width: 2rem;
+        aspect-ratio: 1;
 
-    }
+        }
+        .mobile-nav-toggle[aria-expanded = "true"]{
+            background-image: url('close.svg');
+        }
 
-    .mobile-nav-toglle[aria-expanded = "true"]{
-        background-image: url('close.svg');
-    }
-    
+        .headcontainer h1{
+            margin: 6% auto;
+            font-size: 40px;
+
+        }
+        
+        .container p{
+            width: 90%;
+            margin-bottom: 20px;
+            margin-left: 0;
+            padding: 0;
+            font-size: 50px;
+            text-align: center;
+            /* display: none; */
+        }
+        .container .first{
+            width: 90%;
+            margin-top: 20px;
+            margin-left: 7%;
+            padding: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+        .container .second{
+            width: 90%;
+            margin-top: 20px;
+            margin-left: 7%;
+            padding: 0;
+            font-size: 20px;
+            margin-left: 0%;
+            text-align: center;
+        }
+
+        .container .learn{
+            margin: 9% 27%;
+
+        }
+
+        .innerbox{
+            position: absolute;
+            top: 70%;
+            width: 100%;
+            height: 300px;
+            
+        }
+        .innerbox img{
+            width: 100%;            
+        }
+
 }
 
+
+.innerbox{
+    display: flex;
+    background-color: gray;
+    /* width: 60%; */
+    margin: 45% auto;
+    height: 300px;
+}
+.innerbox img{
+    /* width: 50%; */
+    /* height: 200px; */
+    /* aspect-ratio: 1; */
+    /* border-radius: 50%; */
+    margin: 10px;
+
+}
+.innerbox p{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+}
