@@ -154,7 +154,7 @@ body{
         z-index: 9999;
         background-repeat: no-repeat;
         /* background-color: white; */
-        background: url('mobile-application-hamburger-menu-setting-vector-25729243.jpg');
+        background-image: url('mobile-application-hamburger-menu-setting-vector-25729243.jpg');
 
         background-size: 2rem;
         border: none;
